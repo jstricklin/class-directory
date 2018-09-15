@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import Profiles from './components/profiles'
 
 class App extends Component {
+    constructor(){
+        super();
+        this.state = {
+           studentData: []
+        }
+    }
     componentDidMount(){
-        getData();
+        getData().then(data => this.setState({studentData: data}))
     };
     render() {
         return (
@@ -19,7 +25,7 @@ class App extends Component {
                                 <span className="spacer-1" />
                                 <br />
                                 <p>Click a student below to view more info</p>
-                                <Profiles />
+                                <Profiles data={this.state.studentData} text="test text" />
                             </header>
                         </div>
                     </section>
@@ -28,12 +34,10 @@ class App extends Component {
             );
     }
 }
-
+const baseURL = 'https://class-directory-01.herokuapp.com/';
 const getData = () => {
-    const baseURL = 'https://class-directory-01.herokuapp.com/';
     return fetch(baseURL)
         .then(res => res.json())
-        .then(json => console.log(json))
 }
 
 export default App;

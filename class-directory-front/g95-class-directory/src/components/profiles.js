@@ -4,12 +4,12 @@ import Profile from './profile'
 export default class Profiles extends Component {
     constructor(props) {
         super(props);
-    }
+    };
     render(){
         return (
             <div>
-                PROFILES
-                <Profile />
+                <h5>PROFILES</h5>
+                {this.props.text}
             </div>
         );
     }
