@@ -14,18 +14,14 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <main className="d-flex flex-column justify-content-center">
+                <main className="d-flex my-auto pt-5 justify-content-center">
                     <section className="container-fluid">
                         <div className="col-sm-6 text-center mx-auto">
-                            <header className="jumbotron main-header">
+                            <header className="jumbotron main">
 
                                 <h1 className="main-title">g95 Cohort Directory</h1>
-                                <a>__________________________________</a>
-                                <br />
                                 <span className="spacer-1" />
-                                <br />
-                                <p>Click a student below to view more info</p>
-                                <Profiles data={this.state.studentData} text="test text" />
+                                <Profiles data={this.state.studentData}  />
                             </header>
                         </div>
                     </section>
