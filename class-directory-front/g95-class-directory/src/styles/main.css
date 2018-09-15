@@ -1,0 +1,22 @@
+main {
+    background-image: url('../assets/g-bldg.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    z-index: -1;
+}
+.main-header {
+    background-color: rgba(230, 145, 55, .85);
+    color: white;
+    
+}
+.spacer-1 {
+    margin: 1em;
+}
+p {
+    font-weight: 100;
+}
+.main-title {
+    font-weight: 100;
+}
+

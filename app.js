@@ -4,8 +4,11 @@ const port = process.env.PORT || 3000
 const queries = require('./queries')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
+const cors = require('cors')
+
 const listener = ()=> { console.log(`Class Party on Port: ${port}`) }
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(morgan('common'))
 app.listen(port, listener)
