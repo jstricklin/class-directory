@@ -2,14 +2,15 @@ main {
     background-image: url('../assets/g-bldg.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
-    z-index: -1;
+    background-attachment: fixed;
+    height: 100%;
+    /* z-index: -1; */
 }
 .main {
     background-color: rgba(230, 145, 55, .85);
     color: white;
     box-shadow: 0 0 50px black;
-    position: absolute;
+    /* position: absolute; */
 }
 .spacer-1 {
     margin: 1em;
