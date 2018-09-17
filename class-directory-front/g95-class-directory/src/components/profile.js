@@ -9,8 +9,10 @@ export default class Profile extends Component {
         return (
             <div className="card profile-card">
                 <img className="card-img-top" src={this.props.imgSrc} />
-                <h5 className="pt-3 my-auto card-title">{this.props.first}</h5>
-                <p>{this.props.last}</p>
+                <section className="card-body rounded-bottom py-2 my-auto ">
+                    <h5 className="card-title">{this.props.first}</h5>
+                    <p>{this.props.last}</p>
+                </section>
             </div>
             );
     }

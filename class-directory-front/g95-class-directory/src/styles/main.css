@@ -4,7 +4,11 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
-    /* z-index: -1; */
+    padding-top: 5em;
+}
+.container-fluid {
+    margin: 0;
+    padding: 0;
 }
 .main {
     background-color: rgba(230, 145, 55, .85);
@@ -30,6 +34,20 @@ main {
     border-radius: 5px;
     padding: 1em;
 }
+nav { 
+    background: rgba(230,145,55, 1);
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+}
+nav ul {
+    margin:0;
+    padding: 0;
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
 img {
     max-width: 250px;
     height: auto;
@@ -37,6 +55,11 @@ img {
 p {
     margin: 0;
     font-weight: 100;
+    color:white;
+}
+footer {
+    font-size: 75%;
+    background-color: rgb(230, 145, 55);
 }
 .profile {
     margin: 1rem; 
@@ -47,6 +70,10 @@ p {
     margin: 1em;
     padding: 1rem;
 }
+.card-body {
+    background-color: rgba(230, 145, 55, .45);
+    padding: 0;
+}
 .main-title {
     font-weight: 100;
     padding-bottom: 1rem;
@@ -55,4 +82,7 @@ p {
     border-spacing: 2em;
     border-bottom: 1px white solid;
 }
-
+.card-title {
+    margin: 0;
+    padding: 0;
+}
