@@ -93,7 +93,6 @@ footer {
     margin: 0;
     padding: 0;
 }
-.login-modal {
+.modal {
     margin-top: 3em;
-    background-color: red;
 }

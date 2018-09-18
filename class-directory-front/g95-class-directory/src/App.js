@@ -32,11 +32,11 @@ class App extends Component {
                                 <li><a href="https://www.galvanize.com/" rel="noopener noreferrer" target="_blank">Galvanize WDI</a></li>
                                 <li><Link to="/">Directory</Link></li>
                                 <li><Link to="/about">About</Link></li>
-                                <li><a onClick={this.toggle} >Login</a></li>
+                                <li><a onClick={this.toggle} href="#" >Login</a></li>
                             </ul>
                         </div>
                     </nav>
-                    <LoginModal modal={this.state.modal} />
+                    <LoginModal clickHandler={this.toggle} modal={this.state.modal} />
                     <main className="d-flex my-auto justify-content-center">
                         <section className="col-sm-6 text-center mx-auto pt-5">
                             <header className="jumbotron main">

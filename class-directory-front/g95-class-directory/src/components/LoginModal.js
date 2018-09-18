@@ -4,7 +4,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter, Button } from 'reactstrap';
 const LoginModal = (props)=> {
     return (
         <React.Fragment>
-            <Modal isOpen={props.modal} toggle={this.toggle} >
+            <Modal isOpen={props.modal} toggle={props.clickHandler} >
                 <ModalHeader className="mx-auto">
                     Please Enter the g95 Class Password:
                 </ModalHeader>
@@ -12,8 +12,8 @@ const LoginModal = (props)=> {
                     <input type="password" />
                 </ModalBody>
                 <ModalFooter className="mx-auto">
-                    <Button color="success" onClick={this.toggle}>log in</Button>
-                    <Button color="primary" onClick={this.toggle}>cancel</Button>
+                    <Button color="success" onClick={props.clickHandler} >log in</Button>
+                    <Button color="primary" onClick={props.clickHandler} >cancel</Button>
                 </ModalFooter>
             </Modal>
         </ React.Fragment>
