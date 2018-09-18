@@ -29,8 +29,8 @@ class App extends Component {
                     <nav>
                         <div className="col-sm-10 mx-auto">
                             <ul>
-                                <li><Link to="/">Directory</Link></li>
                                 <li><a href="https://www.galvanize.com/" rel="noopener noreferrer" target="_blank">Galvanize WDI</a></li>
+                                <li><Link to="/">Directory</Link></li>
                                 <li><Link to="/about">About</Link></li>
                                 <li><a onClick={this.toggle} >Login</a></li>
                             </ul>
