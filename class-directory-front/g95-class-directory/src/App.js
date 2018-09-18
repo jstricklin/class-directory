@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import Profiles from './components/profiles'
+import { Route, Link, Switch } from 'react-router-dom';
+import { Modal  } from 'reactstrap';
+import LoginModal from './components/LoginModal'
+const $ = require('jquery');
 
 class App extends Component {
     constructor(){
         super();
         this.state = {
-            studentData: []
+            studentData: [],
+            modal: false
         }
+        this.toggle = this.toggle.bind(this);
+    }
+    toggle() {
+        this.setState({
+            modal: !this.state.modal
+        });
     }
     componentDidMount(){
         getData().then(data => this.setState({studentData: data}))
@@ -18,20 +29,24 @@ class App extends Component {
                     <nav>
                         <div className="col-sm-10 mx-auto">
                             <ul>
-                                <li><a>Directory</a></li>
-                                <li><a>Galvanize WDI</a></li>
-                                <li><a>About</a></li>
-                                <li><a>Login</a></li>
+                                <li><Link to="/">Directory</Link></li>
+                                <li><a href="https://www.galvanize.com/" rel="noopener noreferrer" target="_blank">Galvanize WDI</a></li>
+                                <li><Link to="/about">About</Link></li>
+                                <li><a onClick={this.toggle} >Login</a></li>
                             </ul>
                         </div>
                     </nav>
+                    <LoginModal modal={this.state.modal} />
                     <main className="d-flex my-auto justify-content-center">
                         <section className="col-sm-6 text-center mx-auto pt-5">
                             <header className="jumbotron main">
 
-                                <h1 className="main-title">g95 Cohort directory</h1>
+                                <h2 className="main-title">g95 Cohort Directory</h2>
                                 <span className="spacer-1" />
-                                <Profiles data={this.state.studentData}  />
+                                <Switch>
+                                    <Route exact path="/" component={()=> ( <Profiles data={this.state.studentData}/> )} />
+                                    <Route path="/about" component={About} />
+                                </Switch>
                             </header>
                         </section>
                     </main>
@@ -43,7 +58,14 @@ class App extends Component {
                 </section>
             </div>
             );
-    }
+}
+}
+const About = () => {
+    return (
+        <div>
+            <p>The g95 class directory was completed as part of a full stack application course utilizing various front and back end technologies to create, read, update, and delete information for a back-end database.</p>
+        </div>
+        );
 }
 const baseURL = 'https://class-directory-01.herokuapp.com/';
 const getData = () => {

@@ -4,6 +4,7 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     height: 100%;
+    min-height: 100vh;
     padding-top: 5em;
 }
 .container-fluid {
@@ -52,6 +53,12 @@ img {
     max-width: 250px;
     height: auto;
 }
+a {
+    color: white;
+}
+a:hover {
+    color: white;
+}
 p {
     margin: 0;
     font-weight: 100;
@@ -75,7 +82,7 @@ footer {
     padding: 0;
 }
 .main-title {
-    font-weight: 100;
+    font-weight: 500;
     padding-bottom: 1rem;
     margin-bottom: 0;
     border-collapse: seperate;
@@ -85,4 +92,8 @@ footer {
 .card-title {
     margin: 0;
     padding: 0;
+}
+.login-modal {
+    margin-top: 3em;
+    background-color: red;
 }
