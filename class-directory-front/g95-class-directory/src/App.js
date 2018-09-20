@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Profiles from './components/profiles'
+import Admin from './components/Admin';
 import { Route, Link, Switch } from 'react-router-dom';
 import { Modal  } from 'reactstrap';
 import LoginModal from './components/LoginModal'
@@ -32,6 +33,7 @@ class App extends Component {
                                 <li><a href="https://www.galvanize.com/" rel="noopener noreferrer" target="_blank">Galvanize WDI</a></li>
                                 <li><Link to="/">Directory</Link></li>
                                 <li><Link to="/about">About</Link></li>
+                                <li><Link to="/admin">Admin</Link></li>
                                 <li><a onClick={this.toggle} href="#" >Login</a></li>
                             </ul>
                         </div>
@@ -45,6 +47,7 @@ class App extends Component {
                                 <span className="spacer-1" />
                                 <Switch>
                                     <Route exact path="/" component={()=> ( <Profiles data={this.state.studentData}/> )} />
+                                    <Route path='/admin' render={()=>(<Admin students={this.state.studentData}/>)} component={ Admin } />
                                     <Route path="/about" component={About} />
                                 </Switch>
                             </header>

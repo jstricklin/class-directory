@@ -18,6 +18,6 @@ const LoginModal = (props)=> {
             </Modal>
         </ React.Fragment>
         )
-}
+        }
 
-export default LoginModal;
+        export default LoginModal;
